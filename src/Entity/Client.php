@@ -33,7 +33,8 @@ class Client
     private ?string $codePostal = null;
 
     #[ORM\Column(length: 255)]
-    
+    #[Assert\Regex('#^0[1-79]([0-9]){8}$#')]
+
     private ?string $telephone = null;
 
     #[ORM\Column(length: 255)]
