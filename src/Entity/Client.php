@@ -33,6 +33,7 @@ class Client
     private ?string $codePostal = null;
 
     #[ORM\Column(length: 255)]
+    //Condition Regex pour avoir le numero sous format 10 digit
     #[Assert\Regex('#^0[1-79]([0-9]){8}$#')]
 
     private ?string $telephone = null;
