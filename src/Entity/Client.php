@@ -4,13 +4,10 @@ namespace App\Entity;
 
 use App\Repository\ClientRepository;
 use ApiPlatform\Metadata\ApiResource;
-use ApiPlatform\Metadata\ApiFilter;
-use Symfony\Component\Validator\Constraints as Assert;
-use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ClientRepository::class)]
-#[ApiResource, ApiFilter(SearchFilter::class, properties:['statut'=>'exact'])]
+#[ApiResource]
 class Client
 {
     #[ORM\Id]
@@ -34,9 +31,6 @@ class Client
     private ?string $codePostal = null;
 
     #[ORM\Column(length: 255)]
-    //Condition Regex pour avoir le numero sous format 10 digit
-    #[Assert\Regex('#^0[1-79]([0-9]){8}$#')]
-
     private ?string $telephone = null;
 
     #[ORM\Column(length: 255)]
