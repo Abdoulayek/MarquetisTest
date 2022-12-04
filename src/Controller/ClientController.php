@@ -63,7 +63,7 @@ public function numeroformat(ManagerRegistry $doctrine,ClientRepository $clientR
 
     else if (strlen($val->getTelephone())< 10) 
     {
-        echo "faux numéro ";
+        echo "faux numéro et son idcontact est  ";
         echo  $val->getIdContact();
     } 
     
